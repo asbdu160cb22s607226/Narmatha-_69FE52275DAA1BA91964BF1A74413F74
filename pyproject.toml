@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emotion-to-action"
+version = "0.1.0"
+description = "Emotion to Action Smart Assistant"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "EMOTION TO ACTION Team" }]
+dependencies = [
+  "fastapi>=0.112.0",
+  "uvicorn[standard]>=0.30.0",
+  "pydantic>=2.7.0"
+]
+
+[project.scripts]
+emotion-to-action = "emotion_to_action.cli:main"
+emotion-to-action-server = "emotion_to_action.server:run"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
